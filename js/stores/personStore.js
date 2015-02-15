@@ -50,7 +50,7 @@ var PersonStore = assign({}, EventEmitter.prototype, {
 	},
 
 	removeChangeListener: function(callback){
-		this.removeListener(CHANGE_EVENT. callback);
+		this.removeListener(CHANGE_EVENT, callback);
 	},
 
 	dispatcherIndex: AppDispatcher.register(function(payload){

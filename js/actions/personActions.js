@@ -22,9 +22,6 @@ var PersonActions = {
 			id: id
 		});	
 	}
-
-
-
 };
 
 module.exports = PersonActions;

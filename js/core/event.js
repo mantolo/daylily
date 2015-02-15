@@ -18,9 +18,10 @@ var emitter = assign(new EventEmitter(), {
 	emitAsync: function(){
 		var that = this,
 		params = utils.sortArgs(arguments);
-		setTimeout(function(){
+
+		utils.setImmediate(function(){
 			that.emit.apply(that, params[0]);	
-		}, 0);		
+		});				
 	}
 });
  
