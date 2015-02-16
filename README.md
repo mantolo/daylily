@@ -8,3 +8,4 @@ TODO items:
 .Css framework
 .Webfont
 .ChatHistory (Archivable)
+.Emoji
