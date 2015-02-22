@@ -1,0 +1,53 @@
+@import "../node_modules/material-ui/src/less/scaffolding.less";
+
+//Define a custom less file to override
+//any variables defined in scaffolding.less
+//@import "my-custom-overrides.less";
+
+@import "../node_modules/material-ui/src/less/components.less";
+
+html, body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.mui-menu-item:hover {
+	color: #00bcd4;
+	transition-duration: 0;
+}
+
+.editBackground {
+	position: absolute;
+	right: 20px;
+	.icon-image {
+		color: grey;
+		font-size: 16px;
+	}
+}
+
+.mui-text-field {
+	width: 100%;
+
+}
+
+
+
+.people {
+	float: right;
+	margin-top: 8px;
+}
+
+.title{
+	margin-left: 15px;
+}
+
+.roomlist.selected {
+
+}
+
+.messagelist{
+	h4 { text-indent: 1em; }
+}
+
+.roomlist {
+	h4 { text-indent: 1em; }
+}

@@ -1,10 +1,33 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var MessageConstants = require('../constants/messageConstants');
+var hubConstants = require('../constants/hubConstants');
 var assign = require('object-assign');
 var CHANGE_EVENT = 'messageChange';
 
-var _messages = {}
+var _messages = {};
+
+var example = {
+	mid: {
+		from: '',
+		to: '',
+		room: '',
+		mid: '',
+		timestamp: '',
+		text: ''
+	}
+};
+
+function modal(){
+	return {
+		from: '',
+		to: '',
+		room: '',
+		mid: '',
+		timestamp: '',
+		text: ''
+	};
+}
 
 /**
  * Create a person
@@ -12,10 +35,11 @@ var _messages = {}
  * @param  email email of this person
  * @return {[type]}
  */
-function create(text){
-	var id = Date.now();
-	_messages[id] = {
-		id: id,
+function create(from, to, mid, text){
+	_messages[mid] = {
+		from: from, // userName
+		mid: mid,
+		to: to, // thread id
 		text: text,
 		read: false
 	};
@@ -59,8 +83,8 @@ var MessageStore = assign({}, EventEmitter.prototype, {
 	dispatcherIndex: AppDispatcher.register(function(payload){
 		var action = payload.action;
 		switch(action.actionType){
-			case MessageConstants.MSG_ADD_BC:
-				create(action.text);
+			case hubConstants.HUB_USER_MSG:
+				create(action.from, action.to, action.mid, action.text);
 				MessageStore.emitChange();
 				break;
 			case MessageConstants.MSG_UPDATE_BC:

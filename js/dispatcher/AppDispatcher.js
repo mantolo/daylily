@@ -12,6 +12,13 @@ var AppDispatcher = assign({}, Dispatcher.prototype, {
       source: 'VIEW_ACTION',
       action: action
     });
+  },
+
+  handleServerAction: function(action){
+    this.dispatch({
+      source: 'SERVER_ACTION',
+      action: action
+    });
   }
 
 });

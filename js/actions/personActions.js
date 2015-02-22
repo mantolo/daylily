@@ -2,23 +2,16 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 var PersonConstants = require('../constants/personConstants');
 
 var PersonActions = {
-	create: function(name, email){
+	select: function(uid){
 		AppDispatcher.handleViewAction({
-			actionType: PersonConstants.PERSON_CREATE,
-			name: name,
-			email: email
-		});
-	},
-	destroy: function(id){
-		AppDispatcher.handleViewAction({
-			actionType: PersonConstants.PERSON_DESTROY,
-			id: id
+			actionType: PersonConstants.PERSON_SELECT,
+			uid: uid
 		});
 	},
 
 	updateProfilePic: function(){
 		AppDispatcher.handleViewAction({
-			actionType: PersonConstants.PERSON_DESTROY,
+			actionType: PersonConstants.PERSON_UPDATE,
 			id: id
 		});	
 	}

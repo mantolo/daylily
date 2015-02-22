@@ -1,35 +1,40 @@
 {
-    "author": "",
-    "browserify": {
-        "transform": [
-            "reactify",
-            "envify"
-        ]
-    },
-    "dependencies": {
-        "es6-promise": "^2.0.1",
-        "flux": "^2.0.1",
-        "keymirror": "~0.1.0",
-        "object-assign": "^1.0.0",
-        "pixi": "^0.2.1",
-        "react": "^0.12.0"
-    },
-    "description": "Test to run nodejs code in browser",
-    "devDependencies": {
-        "browserify": "^8.1.1",
-        "envify": "^3.2.0",
-        "jsxc": "^0.10.0",
-        "reactify": "^0.15.2",
-        "uglify-js": "~2.4.15",
-        "watchify": "^2.1.1"
-    },
-    "license": "MIT",
-    "main": "js/app.js",
-    "name": "httptest",
-    "scripts": {
-        "build": "jsxc js/ react/ & SET NODE_ENV=production & browserify js/app.js | uglifyjs -cm > js/bundle.min.js",
-        "start": "watchify -o js/bundle.js -v -d .",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "version": "1.0.0"
+  "author": "",
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.2",
+    "es6-promise": "^2.0.1",
+    "flux": "^2.0.1",
+    "keymirror": "~0.1.0",
+    "lodash": "^3.2.0",
+    "material-ui": "^0.7.0",
+    "object-assign": "^1.0.0",
+    "pixi": "^0.2.1",
+    "react": "^0.12.0",
+    "react-tap-event-plugin": "^0.1.4"
+  },
+  "description": "Test to run nodejs code in browser",
+  "devDependencies": {
+    "browserify": "^8.1.1",
+    "envify": "^3.2.0",
+    "jsxc": "^0.10.0",
+    "reactify": "^0.15.2",
+    "uglify-js": "~2.4.15",
+    "watchify": "^2.1.1"
+  },
+  "license": "MIT",
+  "main": "js/app.js",
+  "name": "httptest",
+  "scripts": {
+    "build": "jsxc js/ react/ & SET NODE_ENV=production & browserify js/app.js | uglifyjs -cm > js/bundle.min.js",
+    "start": "watchify -o js/bundle.js -v -d .",
+    "less": "lessc less/main.less > css/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
 }

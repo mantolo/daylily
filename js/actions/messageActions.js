@@ -1,6 +1,6 @@
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
-var MessageConstants = require('../constants/MessageConstants');
+var MessageConstants = require('../constants/messageConstants');
 
 var MessageActions = {
 	createBroadcast: function(text){
